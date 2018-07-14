@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+}
+
+.navbar{
+    background-color: #2D72FF;
+    padding-bottom: 2vh;
+    padding-top: 2vh;
+    position: fixed;
+    width: 100%;
+}
+
+.portfolio-item-row{
+    overflow: hidden;
+    margin-bottom: 2%;
+}
+
+.navbar-list{
+    overflow: hidden;
+    padding: 0;
+}
+
+.about-me{
+    background-color: #1D28E8;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-bottom: 1%;
+    padding-top: 70px;
+}
+
+.portfolio{
+    padding: 1%;
+}
+
+.introduction-text, .contact-title, .copyright-text{
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.portfolio-title-text{
+    text-align: center;
+}
+
+.portfolio-item-column{
+    float: left;
+    width: 32%;
+}
+
+.image{
+    display: block;
+    margin: 0 auto;
+    border-radius: 100%;
+}
+
+.navbar-list-item{
+    list-style: none;
+    float: left;
+    width: 33%;
+}
+
+.navbar-link{
+    text-decoration: none;
+    color: white;
+    display: block;
+    height: 100%;
+    text-align: center;
+}
+
+.navbar-link:hover{
+    color: red;
+}
+
+.portfolio-img{
+    width: 100%;
+    height: 250px;
+}
+
+.contact{
+    background-color: #1D95E8;
+}
+
+.icon{
+    color: #FFFFFF;
+    display: block;
+    margin: 0 auto;
+    font-size: 2em;
+}
+
+.contact-item{
+    width: 30%;
+    margin: 0 auto;
+    padding-top: 1%;
+}
+
+.contact-item-row{
+    overflow: hidden;
+    margin-bottom: 2%;
+}
+
+.copyright{
+    padding-top: 1%;
+}
+
+.contact-item-column{
+    float: left;
+    width: 33.33%;
+}
+
+.icon:hover{
+    color: red;
+}
+
+.left-item{
+    margin-right: 2%;
+}
+
+.right-item{
+    margin-left: 2%;
+}
+
+@media only screen and (max-width: 768px){
+    .image{
+        width: 60%;
+    }
+
+    .portfolio-item-column{
+        width: 100%;
+        float: none;
+    }
+
+    .left-item, .right-item{
+        margin: 0;
+    }
+
+    .portfolio-item-column{
+        margin-bottom: 5%;
+    }
+
+    .contact-item-column{
+        float: none;
+        width: 100%;
+        margin-bottom: 1%;
+    }
+
+    .contact-item-row{
+        margin: 0;
+    }
+}
