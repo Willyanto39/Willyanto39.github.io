@@ -1,4 +1,4 @@
-*{
+/**{
     margin: 0;
 }
 
@@ -145,4 +145,37 @@
     .contact-item-row{
         margin: 0;
     }
+}*/
+
+.profile-image {
+    border-radius: 50%;
+}
+
+#content {
+    margin-top: 5vh;
+}
+
+#about-me {
+    margin-bottom: 5vh;
+}
+
+.portfolio-item-row {
+    margin-bottom: 2vh;
+}
+
+.portfolio-item {
+    padding: 1vw;
+    background-clip: padding-box;
+}
+
+.footer-text {
+    color: #fff;
+}
+
+.icon {
+    font-size: 60px;
+}
+
+.center {
+    margin: 0 auto;
 }
