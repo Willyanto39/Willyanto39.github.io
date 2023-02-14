@@ -1,33 +1,306 @@
-.profile-image {
-    border-radius: 50%;
+:root {
+    --background-color: hsl(0, 0%, 92%);
+    --inner-container-background-color: hsl(0, 0%, 99%);
+    --text-color: hsl(0, 0%, 13%);
+    --link-text-color: #0d2668;
+    --link-hover-text-color: #b58200;
+
+    --navbar-background-color: hsl(0, 0%, 13%);
+    --navbar-background-contrast: hsl(0, 0%, 25%);
+    --navbar-text-color: hsl(0, 0%, 92%);
+    --navbar-height: 4rem;
+
+    --footer-background-color: var(--navbar-background-color);
+    --footer-text-color: var(--navbar-text-color);
 }
 
-#content {
-    margin-top: 5vh;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-#about-me {
-    padding-top: 70px;
-    margin-bottom: 5vh;
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Open Sans', sans-serif;
 }
 
-#portfolio {
-    margin-bottom: 5vh;
+header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: var(--navbar-background-color);
+    height: var(--navbar-height);
 }
 
-.portfolio-item {
-    padding: 1vw;
-    background-clip: padding-box;
+#navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
 }
 
-.footer-text {
-    color: #fff;
+#brand {
+    color: var(--navbar-text-color);
+    font-weight: 900;
 }
 
-.icon {
-    font-size: 60px;
+#navbar-toggle {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
-.center {
+#navbar-toggle:is(:hover, :focus) {
+    background-color: var(--navbar-background-contrast);
+}
+
+.icon-bar {
+    display: block;
+    background-color: var(--navbar-text-color);
+    width: 1.5rem;
+    height: 0.25rem;
+    margin: 0.125rem;
+}
+
+#navbar-menu {
+    position: fixed;
+    top: var(--navbar-height);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#navbar-toggle[aria-expanded="true"] + #navbar-menu {
+    visibility: visible;
+    opacity: 1;
+}
+
+#navbar-toggle[aria-expanded="true"] + #navbar-menu .navbar-link {
+    padding: 0.75rem;
+}
+
+#navbar-links {
+    list-style: none;
+    background-color: var(--navbar-background-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar-item {
+    width: 100%;
+    margin: 0.4rem;
+}
+
+.navbar-link {
+    display: flex;
+    color: var(--navbar-text-color);
+    text-decoration: none;
+    padding: 0.4rem 0.8rem;
+    white-space: nowrap;
+}
+
+.navbar-link:is(:focus, :hover) {
+    background-color: var(--navbar-background-contrast);
+}
+
+main {
+    padding-top: var(--navbar-height);
+    max-width: 71.25rem;
     margin: 0 auto;
+}
+
+main section {
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
+}
+
+#about-me p {
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+#about-me-description {
+    text-align: center;
+}
+
+#about-me-name {
+    margin-top: 3rem;
+}
+
+#about-me-profile-picture {
+    display: block;
+    width: 15.625rem;
+    height: 15.625rem;
+    margin: 0 auto;
+}
+
+.about-me-link {
+    background-color: hsl(0, 0%, 99%);
+    display: inline-block;
+    padding: 0.5rem;
+    fill: var(--link-text-color);
+}
+
+.about-me-link:is(:focus, :hover) {
+    fill: var(--link-hover-text-color);
+}
+
+#skills-items {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
+}
+
+.skills-item {
+    background-color: var(--inner-container-background-color);
+    padding: 0.75rem;
+    text-align: center;
+}
+
+.skills-item p {
+    margin-top: 0.625rem;
+}
+
+#projects-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.projects-item img {
+    display: block;
+    margin: 0 auto;
+    max-width: 31.25rem;
+}
+
+.projects-item-description {
+    padding: 1.25rem;
+}
+
+.projects-item-description p {
+    margin-top: 0.5rem;
+    line-height: 1.6;
+}
+
+.projects-links {
+    margin-top: 1.5rem;
+}
+
+.projects-link {
+    margin-right: 1.25rem;
+}
+
+.contact-item {
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.contact-item img {
+    display: block;
+    margin: 0 auto 1.5rem auto;
+}
+
+.contact-item a {
+    display: block;
+}
+
+footer {
+    background-color: var(--footer-background-color);
+    color: var(--footer-text-color);
+    text-align: center;
+    padding: 1.25rem;
+}
+
+.responsive-image {
+    width: 100%;
+    height: auto;
+}
+
+.section-heading {
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+}
+
+.visually-hidden {
+   clip: rect(0, 0, 0, 0);
+   clip-path: inset(50%);
+   width: 1px;
+   height: 1px;
+   overflow: hidden;
+   position: absolute;
+   white-space: nowrap;
+}
+
+.container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.inner-container {
+    background-color: var(--inner-container-background-color);
+}
+
+.item-link {
+    color: var(--link-text-color);
+    font-weight: 900;
+}
+
+.item-link:is(:focus, :hover) {
+    color: var(--link-hover-text-color);
+}
+
+@media screen and (min-width: 43.75rem) {
+    #navbar-toggle, #navbar-toggle[aria-expanded="true"] {
+        display: none;
+    }
+
+    #navbar-menu, #navbar-toggle[aria-expanded="true"] + #navbar-menu {
+        visibility: visible;
+        opacity: 1;
+        position: static;
+        height: 100%;
+    }
+
+    #navbar-links, #navbar-toggle[aria-expanded="true"] #navbar-links {
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        position: static;
+    }
+
+    .projects-item {
+        display: flex;
+        flex-direction: row;
+        padding: 2rem;
+    }
+    
+    .projects-item img {
+        margin: 0;
+        width: 21.875rem;
+    }
+}
+
+@media screen and (min-width: 62.5rem) {
+    #about-me {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #about-me-description {
+        text-align: left;
+    }
+
+    .projects-item img {
+        width: 31.25rem;
+    }
 }

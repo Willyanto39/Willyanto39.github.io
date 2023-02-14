@@ -1,19 +1,16 @@
-$(document).ready(function() {
-    $('#scroll-about-me').click(function(){
-        scrollToSection($('#about-me'));
-    });
+const navbarToggle = document.querySelector("#navbar-toggle");
+const navbarMenu = document.querySelector("#navbar-menu");
+const navbarLinks = document.querySelector("#navbar-links");
 
-    $('#scroll-portfolio').click(function(){
-        scrollToSection($('#portfolio'));
-    });
+let isNavbarExpanded = navbarToggle.getAttribute("aria-expanded") === "true";
 
-    $('#scroll-contact').click(function() {
-        scrollToSection($('#contact'))
-    });
-});
+const changeToggleNavbarVisibility = () => {
+    isNavbarExpanded = !isNavbarExpanded;
+    navbarToggle.setAttribute("aria-expanded", isNavbarExpanded);
+};
 
-function scrollToSection(selector) {
-    $('html, body').animate({
-        scrollTop: $(selector).offset().top
-    }, 750);
-}
+navbarToggle.addEventListener("click", changeToggleNavbarVisibility);
+
+navbarLinks.addEventListener("click", (e) => e.stopPropagation());
+
+navbarMenu.addEventListener("click", changeToggleNavbarVisibility);
