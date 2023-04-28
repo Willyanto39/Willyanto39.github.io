@@ -165,17 +165,19 @@ main section {
 #skills-items {
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+    list-style: none;
 }
 
 .skills-item {
     background-color: var(--inner-container-background-color);
-    padding: 0.75rem;
+    padding: 0.625rem;
     text-align: center;
 }
 
 .skills-item p {
     margin-top: 0.625rem;
+    font-size: 0.7rem;
 }
 
 #projects-items {
