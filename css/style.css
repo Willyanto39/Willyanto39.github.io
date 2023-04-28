@@ -186,6 +186,10 @@ main section {
     gap: 1.5rem;
 }
 
+.projects-item {
+    padding: 1.25rem;
+}
+
 .projects-item img {
     display: block;
     margin: 0 auto;
@@ -193,7 +197,7 @@ main section {
 }
 
 .projects-item-description {
-    padding: 1.25rem;
+    padding: 1.25rem 0;
 }
 
 .projects-item-description p {
@@ -251,8 +255,8 @@ footer {
 }
 
 .container {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .inner-container {
@@ -269,6 +273,11 @@ footer {
 }
 
 @media screen and (min-width: 43.75rem) {
+    .container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
     #navbar-toggle, #navbar-toggle[aria-expanded="true"] {
         display: none;
     }
@@ -296,6 +305,10 @@ footer {
     .projects-item img {
         margin: 0;
         width: 21.875rem;
+    }
+
+    .projects-item-description {
+        padding: 0 1.25rem;
     }
 }
 
