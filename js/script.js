@@ -1,6 +1,4 @@
 const navbarToggle = document.querySelector("#navbar-toggle");
-const navbarMenu = document.querySelector("#navbar-menu");
-const navbarLinks = document.querySelector("#navbar-links");
 
 let isNavbarExpanded = navbarToggle.getAttribute("aria-expanded") === "true";
 
@@ -9,8 +7,9 @@ const changeToggleNavbarVisibility = () => {
     navbarToggle.setAttribute("aria-expanded", isNavbarExpanded);
 };
 
-navbarToggle.addEventListener("click", changeToggleNavbarVisibility);
+navbarToggle.addEventListener("click", e => { 
+    e.stopPropagation(); 
+    changeToggleNavbarVisibility()
+});
 
-navbarLinks.addEventListener("click", (e) => e.stopPropagation());
-
-navbarMenu.addEventListener("click", changeToggleNavbarVisibility);
+window.addEventListener("click", e => isNavbarExpanded && changeToggleNavbarVisibility());
